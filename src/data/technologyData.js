@@ -1,19 +1,42 @@
 
-import radixactImage from "../assets/patients-support/Image-guided radiotherapy.jpg";
-import adaptiveImage from "../assets/patients-support/Heart-sparing radiotherapy.jpg";
-import brachytherapyImage from "../assets/patients-support/Breast brachytherapy.jpg";
-import dibhImage from "../assets/patients-support/Heart-sparing radiotherapy.jpg";
-import versaImage from "../assets/home/radiation-oncology.jpg";
-import molecularImage from "../assets/patients-support/Genomic profiling.jpg";
-import pathologyImage from "../assets/patients-support/Onco-pathology.jpg";
-import roboticImage from "../assets/home/surgical-oncology.jpg";
-import hipecImage from "../assets/home/diagnostic-imaging.jpg";
-import mammographyImage from "../assets/patients-support/Digital breast tomosynthesis.jpg";
-import breastInitiativeImage from "../assets/patients-support/Pink Room and B-Well Wednesdays.jpg";
-
-import medicalOncologyImage from "../assets/treatments/medical-oncology.jpg";
+import adaptiveImage from "../assets/technology/ai-adaptive-radiotherapy.jpg";
+import brachytherapyImage from "../assets/technology/mr-guided-brachytherapy.jpg";
+import dibhImage from "../assets/technology/dibh-abc.jpg";
+import versaImage from "../assets/technology/versa-hd.jpg";
+import molecularImage from "../assets/technology/molecular-oncology.jpg";
+import roboticImage from "../assets/technology/robotic-surgery.jpg";
+import hipecImage from "../assets/technology/hipec-pipac.jpg";
+import breastInitiativeImage from "../assets/technology/breast-health-initiative.jpg";
+import mammographyImage from "../assets/technology/3d-mammography.jpg";
 
 
+import radixactImage from "../assets/technology/radixact-x9.jpg";
+
+import radixactNeedImage from "../assets/technology/radixact-immobilization.jpg";
+import radixactWhatIsImage from "../assets/technology/radixact-what-is.jpg";
+import radixactProcedureImage from "../assets/technology/radixact-treatment.jpg";
+import radixactBenefitsImage from "../assets/technology/radixact-treatment-planning.jpg";
+import radixactPrepImage from "../assets/technology/radixact-preparation.jpg";
+import radixactRecoveryImage from "../assets/technology/radixact-follow-up.jpg";
+import radixactConclusionImage from "../assets/technology/radixact-quality-assurance.jpg";
+
+
+import adaptiveWhatIsImage from "../assets/technology/adaptive-what-is.jpg";
+import adaptiveNeedImage from "../assets/technology/adaptive-why-needed.jpg";
+import adaptiveProcedureImage from "../assets/technology/adaptive-procedure.jpg";
+import adaptiveBenefitsImage from "../assets/technology/adaptive-benefits.jpg";
+import adaptivePrepImage from "../assets/technology/adaptive-preparation.jpg";
+import adaptiveRecoveryImage from "../assets/technology/adaptive-recovery.jpg";
+import adaptiveConclusionImage from "../assets/technology/adaptive-conclusion.jpg";
+
+import brachytherapyWhatIsImage from "../assets/technology/brachytherapy-what-is.jpg";
+import brachytherapyNeedImage from "../assets/technology/brachytherapy-why-needed.jpg";
+import brachytherapyProcedureImage from "../assets/technology/brachytherapy-procedure.jpg";
+import brachytherapyBenefitsImage from "../assets/technology/brachytherapy-benefits.jpg";
+import brachytherapyPrepImage from "../assets/technology/brachytherapy-preparation.jpg";
+import brachytherapyConclusionImage from "../assets/technology/brachytherapy-conclusion.jpg";
+
+const pathologyImage = molecularImage;
 // Reusable section builder.
 // Each technology still has its own content and images.
 const createSections = ({
@@ -71,8 +94,8 @@ const createSections = ({
   },
   {
     title: conclusion.title,
-    image: images[0],
-    imageAlt: alt[0],
+    image: images[6],
+    imageAlt: alt[6],
     paragraphs: conclusion.paragraphs,
     points: conclusion.points,
   },
@@ -102,21 +125,24 @@ const radixact = {
 
   sections: createSections({
     images: [
-      radixactImage,
-      adaptiveImage,
-      versaImage,
-      molecularImage,
-      pathologyImage,
-      roboticImage,
-    ],
-    alt: [
-      "Radixact X9 TomoTherapy system",
-      "Radiation therapy planning",
-      "Radiation therapy procedure",
-      "Advanced cancer treatment technology",
-      "Cancer treatment consultation",
-      "Cancer recovery support",
-    ],
+  // radixactImage,        
+     radixactWhatIsImage, 
+  radixactNeedImage,           // Why needed
+  radixactProcedureImage,      // Procedure
+  radixactBenefitsImage,       // Benefits
+  radixactPrepImage,           // Preparation
+  radixactRecoveryImage,       // Recovery
+  radixactConclusionImage,   
+],
+  alt: [
+  "Radixact X9 TomoTherapy machine and treatment system",
+  "Clinical assessment for Radixact X9 treatment",
+  "Patient receiving image-guided radiotherapy",
+  "Radixact X9 precision radiation treatment planning",
+  "Patient preparation for radiotherapy",
+  "Radiotherapy follow-up and recovery care",
+  "Radixact X9 treatment quality assurance",
+],
 
     overview: {
       title: "What is Radixact X9 TomoTherapy?",
@@ -308,21 +334,24 @@ const adaptiveRadiotherapy = {
 
   sections: createSections({
     images: [
-      adaptiveImage,
-      molecularImage,
-      versaImage,
-      pathologyImage,
-      radixactImage,
-      roboticImage,
-    ],
-    alt: [
-      "Adaptive radiation therapy",
-      "Computer-assisted medical analysis",
-      "Radiation therapy equipment",
-      "Medical imaging and pathology",
-      "Image-guided radiotherapy",
-      "Cancer care and recovery",
-    ],
+  adaptiveWhatIsImage,
+  adaptiveNeedImage,
+  adaptiveProcedureImage,
+  adaptiveBenefitsImage,
+  adaptivePrepImage,
+  adaptiveRecoveryImage,
+  adaptiveConclusionImage,
+],
+
+alt: [
+  "AI-assisted radiotherapy treatment planning and CT contouring",
+  "Adaptive radiotherapy imaging for treatment assessment",
+  "Patient positioning during image-guided radiotherapy",
+  "Adaptive radiation treatment planning and dose distribution",
+  "Patient preparation and positioning for radiotherapy",
+  "Oncology follow-up consultation after radiotherapy",
+  "Radiotherapy treatment quality assurance",
+],
 
     overview: {
       title: "What Is AI-Assisted Adaptive Radiotherapy?",
@@ -499,21 +528,24 @@ const brachytherapy = {
 
   sections: createSections({
     images: [
-      brachytherapyImage,
-      pathologyImage,
-      versaImage,
-      adaptiveImage,
-      molecularImage,
-      roboticImage,
-    ],
-    alt: [
-      "Brachytherapy treatment",
-      "Medical imaging and diagnosis",
-      "Radiation therapy",
-      "Adaptive treatment planning",
-      "Cancer care assessment",
-      "Patient recovery support",
-    ],
+  brachytherapyWhatIsImage,
+  brachytherapyNeedImage,
+  brachytherapyProcedureImage,
+  brachytherapyBenefitsImage,
+  brachytherapyPrepImage,
+  adaptiveRecoveryImage,
+  brachytherapyConclusionImage,
+],
+
+alt: [
+  "MR-guided adaptive brachytherapy treatment setup",
+  "MRI imaging for cervical cancer brachytherapy assessment",
+  "MRI-guided brachytherapy applicator and treatment procedure",
+  "MRI-based brachytherapy radiation dose distribution",
+  "MRI preparation and imaging before brachytherapy",
+  "Patient follow-up consultation after brachytherapy",
+  "MRI-guided brachytherapy treatment planning and applicator localization",
+],
 
     overview: {
       title: "What is MR-Guided Adaptive Brachytherapy?",
@@ -682,7 +714,7 @@ const dibh = {
   slug: "dibh-abc",
   title: "Deep Inspiration Breath Hold (DIBH) Using ABC",
   category: "RADIOTHERAPY",
-  image: medicalOncologyImage ,
+  image: dibhImage,
   imageAlt: "Deep inspiration breath hold radiotherapy",
   specialities: ["Radiation Oncology"],
 
@@ -694,21 +726,24 @@ const dibh = {
 
   sections: createSections({
     images: [
-      dibhImage,
-      adaptiveImage,
-      versaImage,
-      radixactImage,
-      pathologyImage,
-      roboticImage,
-    ],
-    alt: [
-      "Deep inspiration breath hold",
-      "Radiotherapy planning",
-      "Radiation treatment equipment",
-      "Image-guided radiation therapy",
-      "Clinical consultation",
-      "Patient recovery support",
-    ],
+  adaptiveImage,
+  versaImage,
+  radixactImage,
+  molecularImage,
+  mammographyImage,
+  breastInitiativeImage,
+  roboticImage,
+],
+
+alt: [
+  "Radiotherapy breath hold treatment planning",
+  "Linear accelerator radiation treatment equipment",
+  "Image-guided radiation therapy",
+  "Medical imaging and treatment analysis",
+  "Breast imaging and treatment assessment",
+  "Breast cancer care and patient support",
+  "Advanced medical treatment technology",
+],
 
     overview: {
       title: "What is Deep Inspiration Breath Hold Using ABC?",
@@ -885,21 +920,24 @@ const versaHD = {
 
   sections: createSections({
     images: [
-      versaImage,
-      adaptiveImage,
-      radixactImage,
-      molecularImage,
-      pathologyImage,
-      roboticImage,
-    ],
-    alt: [
-      "VERSA HD linear accelerator",
-      "Radiotherapy planning",
-      "Image-guided radiation therapy",
-      "Cancer treatment technology",
-      "Medical consultation",
-      "Patient recovery support",
-    ],
+  radixactImage,
+  adaptiveImage,
+  dibhImage,
+  molecularImage,
+  roboticImage,
+  mammographyImage,
+  hipecImage,
+],
+
+alt: [
+  "Advanced image-guided radiotherapy system",
+  "Adaptive radiation treatment planning",
+  "Deep inspiration breath hold radiotherapy",
+  "Medical imaging and radiation treatment analysis",
+  "Advanced operating room technology",
+  "Diagnostic breast imaging",
+  "Specialised cancer treatment technology",
+],
 
     overview: {
       title: "What is VERSA HD?",
@@ -1074,21 +1112,24 @@ const molecularOncology = {
 
   sections: createSections({
     images: [
-      molecularImage,
-      pathologyImage,
-      roboticImage,
-      radixactImage,
-      adaptiveImage,
-      versaImage,
-    ],
-    alt: [
-      "Genomic profiling",
-      "Oncology pathology laboratory",
-      "Multidisciplinary cancer care",
-      "Cancer diagnosis",
-      "Medical analysis",
-      "Cancer treatment planning",
-    ],
+  mammographyImage,
+  breastInitiativeImage,
+  hipecImage,
+  roboticImage,
+  adaptiveImage,
+  versaImage,
+  dibhImage,
+],
+
+alt: [
+  "Diagnostic medical imaging",
+  "Breast health and cancer awareness",
+  "Specialised oncology treatment",
+  "Advanced surgical technology",
+  "AI-assisted medical image analysis",
+  "Radiotherapy treatment technology",
+  "Radiotherapy planning and patient positioning",
+],
 
     overview: {
       title: "What is Molecular Oncology?",
@@ -1275,22 +1316,25 @@ const roboticSurgery = {
     "In robotic-assisted surgery, the surgeon controls specialised instruments from a console. The system translates the surgeon's hand movements into instrument movements inside the patient. The robot does not independently perform the operation.",
 
   sections: createSections({
-    images: [
-      roboticImage,
-      pathologyImage,
-      versaImage,
-      molecularImage,
-      hipecImage,
-      breastInitiativeImage,
-    ],
-    alt: [
-      "Robotic-assisted cancer surgery",
-      "Surgical assessment",
-      "Operating room technology",
-      "Multidisciplinary cancer care",
-      "Cancer treatment planning",
-      "Patient recovery support",
-    ],
+   images: [
+  hipecImage,
+  molecularImage,
+  versaImage,
+  breastInitiativeImage,
+  dibhImage,
+  adaptiveImage,
+  mammographyImage,
+],
+
+alt: [
+  "Advanced surgical oncology treatment",
+  "Molecular oncology and genomic testing",
+  "Medical treatment equipment",
+  "Breast cancer care team",
+  "Radiotherapy patient positioning",
+  "Advanced medical imaging and planning",
+  "Diagnostic breast imaging",
+],
 
     overview: {
       title: "What is Robotic-Assisted Surgery?",
@@ -1477,21 +1521,24 @@ const hipecPipac = {
 
   sections: createSections({
     images: [
-      hipecImage,
-      pathologyImage,
-      roboticImage,
-      molecularImage,
-      versaImage,
-      breastInitiativeImage,
-    ],
-    alt: [
-      "HIPEC and PIPAC cancer procedures",
-      "Cancer pathology assessment",
-      "Surgical oncology",
-      "Multidisciplinary cancer care",
-      "Cancer treatment planning",
-      "Patient recovery support",
-    ],
+  roboticImage,
+  molecularImage,
+  breastInitiativeImage,
+  versaImage,
+  adaptiveImage,
+  mammographyImage,
+  dibhImage,
+],
+
+alt: [
+  "Advanced surgical oncology procedure",
+  "Molecular cancer diagnostics",
+  "Cancer awareness and patient care",
+  "Medical treatment technology",
+  "Advanced treatment planning",
+  "Diagnostic breast imaging",
+  "Radiotherapy treatment positioning",
+],
 
     overview: {
       title: "What are HIPEC and PIPAC?",
@@ -1683,21 +1730,24 @@ const breastHealthInitiative = {
 
   sections: createSections({
     images: [
-      breastInitiativeImage,
-      mammographyImage,
-      pathologyImage,
-      molecularImage,
-      roboticImage,
-      hipecImage,
-    ],
-    alt: [
-      "Breast health awareness campaign",
-      "Digital breast tomosynthesis",
-      "Breast cancer diagnostic assessment",
-      "Breast cancer care",
-      "Specialist breast cancer team",
-      "Patient support",
-    ],
+  mammographyImage,
+  molecularImage,
+  roboticImage,
+  hipecImage,
+  dibhImage,
+  adaptiveImage,
+  versaImage,
+],
+
+alt: [
+  "Digital breast imaging and screening",
+  "Molecular diagnostics for cancer assessment",
+  "Advanced surgical oncology",
+  "Specialised cancer treatment",
+  "Breast radiotherapy positioning",
+  "Advanced medical imaging",
+  "Radiotherapy treatment equipment",
+],
 
     overview: {
       title: "What is the Breast Health Initiative?",
@@ -1876,25 +1926,29 @@ export const mammographyTechnology = {
   detailIntro:
     "3D Mammography, also called digital breast tomosynthesis, captures multiple X-ray images of the breast from different angles. These images are reconstructed into thin slices to help radiologists examine breast tissue.",
 
-  path: "/services/screening-diagnostics/3d-mammography",
+  // path: "/services/screening-diagnostics/3d-mammography",
+  path: "/technology/3d-mammography",
 
   sections: createSections({
     images: [
-      mammographyImage,
-      breastInitiativeImage,
-      pathologyImage,
-      molecularImage,
-      adaptiveImage,
-      roboticImage,
-    ],
-    alt: [
-      "Digital breast tomosynthesis",
-      "Breast health awareness",
-      "Breast diagnostic imaging",
-      "Breast cancer assessment",
-      "Medical imaging",
-      "Breast care support",
-    ],
+  breastInitiativeImage,
+  molecularImage,
+  dibhImage,
+  adaptiveImage,
+  versaImage,
+  roboticImage,
+  hipecImage,
+],
+
+alt: [
+  "Breast health awareness and screening",
+  "Molecular cancer diagnostic testing",
+  "Breast radiotherapy positioning",
+  "Medical imaging and treatment assessment",
+  "Radiotherapy treatment equipment",
+  "Advanced surgical oncology",
+  "Specialised cancer treatment",
+],
 
     overview: {
       title: "What is 3D Mammography?",
