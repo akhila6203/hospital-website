@@ -25,6 +25,32 @@ const RESOURCE_TABS = [
   { id: "faqs", label: "FAQs", Icon: CircleHelp },
 ];
 
+// Extract YouTube video ID from Shorts, youtu.be and watch URLs
+function getYouTubeVideoId(url) {
+  if (!url) return "";
+
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname.includes("youtu.be")) {
+      return parsedUrl.pathname.slice(1);
+    }
+
+    if (parsedUrl.pathname.startsWith("/shorts/")) {
+      return parsedUrl.pathname.split("/")[2];
+    }
+
+    if (parsedUrl.pathname.startsWith("/embed/")) {
+      return parsedUrl.pathname.split("/")[2];
+    }
+
+    return parsedUrl.searchParams.get("v") || "";
+  } catch {
+    // Also supports a plain YouTube video ID
+    return url;
+  }
+}
+
 export default function HealthLibraryTabs({ initialTab = "blogs" }) {
   const [activeTab, setActiveTab] = useState(initialTab);
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -131,14 +157,20 @@ export default function HealthLibraryTabs({ initialTab = "blogs" }) {
                       video.youtubeId ? "cursor-pointer" : "cursor-default"
                     }`}
                   >
-                    {video.thumbnail ? (
-                      <img
-                        src={video.thumbnail}
-                        alt={video.title}
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-                    ) : (
+                    {video.thumbnail || getYouTubeVideoId(video.youtubeId) ? (
+                    <img
+                      src={
+                        video.thumbnail ||
+                        `https://img.youtube.com/vi/${getYouTubeVideoId(video.youtubeId)}/hqdefault.jpg`
+                      }
+                      alt={video.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                      onError={(event) => {
+                        event.currentTarget.src = `https://img.youtube.com/vi/${getYouTubeVideoId(video.youtubeId)}/mqdefault.jpg`;
+                      }}
+                    />
+                  ) : (
                       <div className="flex h-full flex-col items-center justify-center gap-2 text-[#4F7359]">
                         <PlayCircle size={42} />
                         <span className="text-xs font-semibold">
@@ -251,13 +283,15 @@ export default function HealthLibraryTabs({ initialTab = "blogs" }) {
 
             <div className="aspect-video w-full bg-black">
               <iframe
-                className="h-full w-full"
-                src={`https://www.youtube-nocookie.com/embed/${selectedVideo.youtubeId}?autoplay=1`}
-                title={selectedVideo.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
+  className="h-full w-full"
+  src={`https://www.youtube.com/embed/${getYouTubeVideoId(
+    selectedVideo.youtubeId
+  )}?autoplay=1&playsinline=1&rel=0`}
+  title={selectedVideo.title}
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+/>
             </div>
 
             <div className="flex justify-end p-4">
