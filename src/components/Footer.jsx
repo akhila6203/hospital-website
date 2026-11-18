@@ -4,15 +4,13 @@ import {
   Phone,
   Mail,
   Clock,
-  // Kaizen Oncology 
-  // RENOVA
   ArrowUpRight,
 } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import { hospital } from "../data/siteData";
 
-import logo from "../assets/logo3.jpg";
+import logo from "../assets/logo3.png";
 
 // Social media icons
 function SocialIcon({ type }) {
@@ -164,12 +162,12 @@ export default function Footer() {
               <img
                 src={logo}
                 alt={`${hospital.name} ${hospital.nameLine2}`}
-                className="h-16 w-auto object-contain"
+                className="h-17 w-auto object-contain"
               />
             </Link>
 
             <p className="mt-5 max-w-sm text-[16px] leading-7 text-white sm:text-[17px]">
-              Kaizen Oncology is dedicated to comprehensive cancer care, bringing together specialist expertise,
+              Hospital is dedicated to comprehensive cancer care, bringing together specialist expertise,
                advanced diagnostic and treatment approaches,
                personalised care planning and compassionate support throughout every stage of the cancer journey.
             </p>
