@@ -402,7 +402,7 @@ export default function AppointmentsPage() {
                 </label>
                 {/* UPLOAD REPORTS - OPTIONAL */}
             {/* <label className="block text-[15px] font-semibold text-[#304b3c] md:col-span-2"> */}
-              <label className="block text-[15px] font-semibold text-[#304b3c]">
+              {/* <label className="block text-[15px] font-semibold text-[#304b3c]">
                 Upload Reports <span className="font-normal">(Optional)</span>
 
                 <input
@@ -417,7 +417,7 @@ export default function AppointmentsPage() {
                   You can upload medical reports, scans or prescriptions.
                   Accepted formats: PDF, JPG, PNG, DOC and DOCX.
                 </span>
-              </label>
+              </label> */}
               </div>
 
               {/* CONSENT */}
